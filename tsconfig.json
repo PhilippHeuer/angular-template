@@ -19,7 +19,8 @@
       "@services/*": ["app/services/*"], 
       "@directives/*": ["app/directives/*"], 
       "@pipes/*": ["app/pipes/*"],
-      "@app/*": ["app/*"]
+      "@app/*": ["app/*"],
+      "@environments/*": ["environments/*"]
     },
     "lib": [
       "es2017",

@@ -13,6 +13,7 @@ This project is not using relative imports, always use absolute paths with the f
 | @directives   | `src/app/directives`    |
 | @pipes        | `src/app/pipes`         |
 | @app          | `src/app`               |
+| @environments | `environments`          |
 
 ## Does the alias order matter?
 
