@@ -1,23 +1,30 @@
 /**
  * Dependencies
  */
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
+/**
+ * Modules
+ */
+import { CoreModule } from '@modules/app-core';
+import { SharedModule } from '@modules/app-shared';
 
 /**
  * Components
  */
 import { AppComponent } from '@app/app.component';
 
+
 /**
  * Module
  */
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
-    BrowserModule
+    CoreModule.forRoot(),
+    SharedModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
