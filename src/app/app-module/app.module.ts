@@ -6,14 +6,13 @@ import { NgModule } from '@angular/core';
 /**
  * Modules
  */
-import { CoreModule } from '@modules/app-core';
-import { SharedModule } from '@modules/app-shared';
+import { CoreModule } from '@app/app-core';
+import { SharedModule } from '@app/app-shared';
 
 /**
  * Components
  */
-import { AppComponent } from '@app/app.component';
-
+import { AppComponent } from './components/root';
 
 /**
  * Module

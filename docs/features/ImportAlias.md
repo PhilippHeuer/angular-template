@@ -7,14 +7,5 @@ This project is not using relative imports, always use absolute paths with the f
 | Alias         | Target Path             |
 | ------------- | ----------------------- |
 | @angular      | `node_modules/@angular` |
-| @components   | `src/app/components`    |
-| @modules      | `src/app/modules`       |
-| @services     | `src/app/services`      |
-| @directives   | `src/app/directives`    |
-| @pipes        | `src/app/pipes`         |
 | @app          | `src/app`               |
 | @environments | `environments`          |
-
-## Does the alias order matter?
-
-Auto import helpers will traverse the list from the top, therefore the high levels dirs have to stay at the bottom.

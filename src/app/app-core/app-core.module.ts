@@ -6,11 +6,12 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 /**
  * Services
  */
-import { LoggingService } from '@modules/app-core/services/logging';
+import { LoggingService } from '@app/app-core/services/logging';
 
 /**
  * Core Module
@@ -21,11 +22,13 @@ import { LoggingService } from '@modules/app-core/services/logging';
     BrowserAnimationsModule,
     CommonModule,
     HttpClientModule,
+    FormsModule,
   ],
   exports: [
     BrowserModule,
     BrowserAnimationsModule,
     CommonModule,
+    FormsModule,
   ]
 })
 export class CoreModule {
@@ -53,9 +56,13 @@ export class CoreModule {
       ngModule: CoreModule,
       providers: [
         /**
-         * Core Services
+         * Modules
          */
-        LoggingService
+        FormsModule,
+        /**
+         * Services
+         */
+        LoggingService,
       ],
     };
   }

@@ -13,12 +13,7 @@
       "node_modules/@types"
     ],
     "paths": {
-      "@angular/*": ["node_modules/@angular/*"], 
-      "@components/*": ["app/components/*"], 
-      "@modules/*": ["app/modules/*"], 
-      "@services/*": ["app/services/*"], 
-      "@directives/*": ["app/directives/*"], 
-      "@pipes/*": ["app/pipes/*"],
+      "@angular/*": ["node_modules/@angular/*"],
       "@app/*": ["app/*"],
       "@environments/*": ["environments/*"]
     },

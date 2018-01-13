@@ -3,12 +3,11 @@
  */
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 
 /**
  * Services
  */
-import { LoggingService } from '@modules/app-core/services/logging';
+import { LoggingService } from '@app/app-core/services/logging';
 
 /**
  * Shared Module
@@ -19,14 +18,10 @@ import { LoggingService } from '@modules/app-core/services/logging';
   imports: [
     // Angular
     CommonModule,
-    // Forms
-    FormsModule,
   ],
   exports: [
     // Angular
     CommonModule,
-    // Forms
-    FormsModule,
   ]
 })
 export class SharedModule {
@@ -53,8 +48,6 @@ export class SharedModule {
     return {
       ngModule: SharedModule,
       providers: [
-        // Forms
-        FormsModule,
       ]
     };
   }

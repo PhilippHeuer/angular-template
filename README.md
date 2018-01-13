@@ -4,9 +4,10 @@
 
 This repository is a template for angular cli based projects.
 
-## Features
+## Core Features
 
 - [Import Aliases](docs/features/ImportAlias.md)
+- [Core / Shared Module](docs/features/CoreSharedModule.md)
 
 ## File Structure
 
