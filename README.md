@@ -6,8 +6,9 @@ This repository is a template for angular cli based projects.
 
 ## Core Features
 
-- [Import Aliases](docs/features/ImportAlias.md)
-- [Core / Shared Module](docs/features/CoreSharedModule.md)
+- [Import Aliases](docs/core/ImportAlias.md)
+- [Core / Shared Module](docs/core/CoreSharedModule.md)
+- [Routing](docs/core/Routing.md)
 
 ## File Structure
 
@@ -27,12 +28,12 @@ template/
  |   ├──tsconfig.spec.json         * extension of the tsconfig for tests
  │   │
  │   ├──app/                       * WebApp: folder
- │   │   ├──app.component.spec.ts  * a simple test of components in app.component.ts
- │   │   ├──app.e2e.ts             * a simple end-to-end test for /
- │   │   └──app.component.ts       * a simple version of our App component components
+ │   │   ├──app-module/            * the core app module that bootstraps the application
+ │   │   ├──app-routing/           * the routing module that contains the routing configuration
+ │   │   ├──app-core/              * the core module to provide singleton services and modules for the app module
+ │   │   └──app-shared/            * the shared module with common dumb components 
  │   │
  │   ├──assets/                    * static assets are served here
- │   │
  │   │
  │   └──environments/              * environment configrations
  │
