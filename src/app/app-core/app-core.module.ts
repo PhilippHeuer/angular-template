@@ -4,8 +4,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 
 /**
@@ -18,15 +16,11 @@ import { LoggingService } from '@app/app-core/services/logging';
  */
 @NgModule({
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
     CommonModule,
     HttpClientModule,
     FormsModule,
   ],
   exports: [
-    BrowserModule,
-    BrowserAnimationsModule,
     CommonModule,
     FormsModule,
   ]

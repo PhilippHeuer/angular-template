@@ -3,6 +3,7 @@
  */
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 /**
 + * Modules
@@ -28,6 +29,8 @@ import { NoContentComponent } from '@app/app-module/components/no-content';
     NoContentComponent,
   ],
   imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
     CoreModule.forRoot(),
     SharedModule.forRoot(),
     AppRoutingModule.forRoot(),
