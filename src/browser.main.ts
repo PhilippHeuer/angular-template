@@ -4,15 +4,11 @@
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-/**
- * Application Dependencies
- */
+// import app main module & environment configuration
 import { AppModule } from '@app/app-module';
 import { environment } from '@environments/environment';
 
-/**
- * Check environment to set production mode
- */
+// is prod environment?
 if (environment.current === 'production') {
   enableProdMode();
 }
