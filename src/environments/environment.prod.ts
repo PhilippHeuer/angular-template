@@ -8,5 +8,14 @@ export const environment = {
   current: 'production',
 
   // this sets the current log level
-  loglevel: 'warn'
+  loglevel: 'warn',
+
+  // app meta information
+  appInfo: {
+    name: 'Application',
+    version: '0.1.0',
+    logo: 'assets/img/logo/logo.png',
+    copyrightYear: '2018',
+    copyrightHolder: 'Copyright'
+  }
 };

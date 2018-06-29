@@ -8,7 +8,16 @@ export const environment = {
   current: 'development',
 
   // this sets the current log level
-  loglevel: 'debug'
+  loglevel: 'debug',
+
+  // app meta information
+  appInfo: {
+    name: 'Application',
+    version: '0.1.0',
+    logo: 'assets/img/logo/logo.png',
+    copyrightYear: '2018',
+    copyrightHolder: 'Copyright'
+  }
 };
 
 /*
