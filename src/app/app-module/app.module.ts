@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from '@app/app-core';
 import { SharedModule } from '@app/app-shared';
 import { AppRoutingModule } from '@app/app-routing';
+import { StateManagementModule } from '@app/state-management';
 
 /**
  * Components
@@ -34,6 +35,7 @@ import { NoContentComponent } from '@app/app-module/components/no-content';
     CoreModule.forRoot(),
     SharedModule.forRoot(),
     AppRoutingModule.forRoot(),
+    StateManagementModule.forRoot(),
   ],
   exports: [
     AppRoutingModule,
