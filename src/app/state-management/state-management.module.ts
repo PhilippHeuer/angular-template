@@ -35,8 +35,8 @@ import * as setting from './reducers/setting/setting.reducer';
  */
 export interface State {
   route: RouterReducerState<any>;
-  auth: auth.State;
-  settings: setting.State;
+  auth: auth.AuthState;
+  settings: setting.SettingState;
 }
 
 /**

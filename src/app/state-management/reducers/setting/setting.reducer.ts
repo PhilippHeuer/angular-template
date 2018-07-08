@@ -7,19 +7,28 @@ import { ActionTypes } from './setting.actions';
 /**
  * The state interface
  */
-export interface State {
+export interface SettingState {
   theme: string;
   language: string;
 }
 
-// Default app state
-export const initialState: State = {
-  theme: 'DEFAULT-THEME',
+/**
+ * Initial State
+ */
+export const initialState: SettingState = {
+  theme: 'default',
   language: 'en',
 };
 
-// Reducer function
-export function settingReducer(state: State = initialState, action: Action) {
+/**
+ * The Selector
+ */
+export const selectorSetting = state => <SettingState>(state.settings || initialState);
+
+/**
+ * Reducer Function
+ */
+export function settingReducer(state: SettingState = initialState, action: Action) {
   switch (action.type) {
     case ActionTypes.CHANGE_THEME:
       return Object.assign({}, state, {
