@@ -6,8 +6,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 /**
-+ * Modules
-+ */
+ * Modules
+ */
 import { CoreModule } from '@app/app-core';
 import { SharedModule } from '@app/app-shared';
 import { AppRoutingModule } from '@app/app-routing';

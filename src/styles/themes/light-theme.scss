@@ -1,0 +1,5 @@
+$light-theme: mat-light-theme(
+  mat-palette($mat-grey, 200, 500, 300), /* Primary */
+  mat-palette($mat-brown, 200), /* Accent */
+  mat-palette($mat-deep-orange, 200) /* Warn */
+);
