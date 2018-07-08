@@ -12,6 +12,7 @@ import { CoreModule } from '@app/app-core';
 import { SharedModule } from '@app/app-shared';
 import { AppRoutingModule } from '@app/app-routing';
 import { StateManagementModule } from '@app/state-management';
+import { AuthModule } from '@app/app-auth';
 
 /**
  * Components
@@ -36,6 +37,7 @@ import { NoContentComponent } from '@app/app-module/components/no-content';
     SharedModule.forRoot(),
     AppRoutingModule.forRoot(),
     StateManagementModule.forRoot(),
+    AuthModule.forRoot(),
   ],
   exports: [
     AppRoutingModule,
