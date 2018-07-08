@@ -17,7 +17,14 @@ export const environment = {
     logo: 'assets/img/logo/logo.png',
     copyrightYear: '2018',
     copyrightHolder: 'Copyright'
-  }
+  },
+
+  // auth
+  auth: {
+    server: 'http://keycloak-server/auth',
+    realm: 'realmName',
+    client: 'clientName'
+  },
 };
 
 /*
