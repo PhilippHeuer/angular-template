@@ -9,6 +9,7 @@ This repository is a template for angular cli based projects.
 - [Import Aliases](docs/core/ImportAlias.md)
 - [Core / Shared Module](docs/core/CoreSharedModule.md)
 - [Routing](docs/core/Routing.md)
+- [NGRX](docs/ngrx/Module.md)
 
 ## File Structure
 
@@ -31,7 +32,8 @@ template/
  │   │   ├──app-module/            * the core app module that bootstraps the application
  │   │   ├──app-routing/           * the routing module that contains the routing configuration
  │   │   ├──app-core/              * the core module to provide singleton services and modules for the app module
- │   │   └──app-shared/            * the shared module with common dumb components 
+ │   │   ├──app-shared/            * the shared module with common dumb components
+ │   │   └──state-management/      * ngrx state management module
  │   │
  │   ├──assets/                    * static assets are served here
  │   │
