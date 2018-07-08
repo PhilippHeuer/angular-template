@@ -7,21 +7,21 @@ import { ActionTypes } from './auth.actions';
 /**
  * The state interface
  */
-export interface State {
+export interface AuthState {
   isAuthenticated: boolean;
   userName: string;
   accessToken: string;
 }
 
 // Default app state
-export const initialState: State = {
+export const initialState: AuthState = {
   isAuthenticated: false,
   userName: undefined,
   accessToken: undefined,
 };
 
 // Reducer function
-export function authReducer(state: State = initialState, action: Action) {
+export function authReducer(state: AuthState = initialState, action: Action) {
   switch (action.type) {
     case ActionTypes.LOGIN:
       return Object.assign({}, state, {
