@@ -4,12 +4,24 @@
 
 This repository is a template for angular cli based projects.
 
+This project as several branches with additional features which you can merge into your project on-demand.
+
 ## Core Features
 
 - [Import Aliases](docs/core/ImportAlias.md)
 - [Core / Shared Module](docs/core/CoreSharedModule.md)
 - [Routing](docs/core/Routing.md)
 - [NGRX](docs/ngrx/Module.md)
+
+## Feature Branches
+
+```markdown
+feature/
+ ├──ngrx                          * ngrx state management
+ ├──auth-keycloak                 * authentication using keycloak
+ ├──ux-material                   * ux design with angular material
+ └──app                           * integrates ngrx and ux-material
+```
 
 ## File Structure
 
