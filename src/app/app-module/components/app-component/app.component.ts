@@ -45,8 +45,14 @@ export class AppComponent implements OnInit {
 
   // Top-Level Navigation Items
   public navigation = [
-    { link: '', label: 'Home' },
-    { link: '404', label: 'Error' }
+    {
+      link: 'home',
+      label: 'Home'
+    },
+    {
+      link: '404',
+      label: 'Error'
+    }
   ];
 
   /**
