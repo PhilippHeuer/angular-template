@@ -18,6 +18,11 @@
 @include mat-core();
 
 /**
+ * Material Styles
+ */
+@import 'styles-material';
+
+/**
  * UX Themes
  */
 @import 'themes/default-theme.scss';
