@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 /**
  * Services
  */
+import { AnimationsService } from '@app/app-core/services/animations';
 import { LoggingService } from '@app/app-core/services/logging';
 
 /**
@@ -56,6 +57,7 @@ export class CoreModule {
         /**
          * Services
          */
+        AnimationsService,
         LoggingService,
       ],
     };

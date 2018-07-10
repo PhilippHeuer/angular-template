@@ -29,12 +29,14 @@
  * Components with Theme-Support
  */
 @import 'styles-reset.scss-theme';
+@import '../app/app-module/components/app-component/app.component.scss-theme';
 
 /**
  * Custom Theme Function
  */
 @mixin custom-components-theme($theme) {
   @include styles-reset-theme($theme);
+  @include app-component-theme($theme);
 }
 
 /**
