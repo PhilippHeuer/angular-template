@@ -1,9 +1,9 @@
 /**
  * Dependencies
  */
-import { NgModule } from '@angular/core';
+import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 /**
@@ -32,8 +32,15 @@ export class CoreModule {
    * Constructor
    */
   constructor(
-    private _logger: LoggingService
+    private _logger: LoggingService,
+    @Optional()
+    @SkipSelf()
+    parentModule: CoreModule
   ) {
+    if (parentModule) {
+      throw new Error('CoreModule is already loaded. Import only in AppModule');
+    }
+
     this._logger.log({
       level: 'DEBUG',
       message: 'App Core Module Initalized.',
