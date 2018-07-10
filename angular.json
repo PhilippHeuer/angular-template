@@ -23,8 +23,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles/app.css",
-              "src/styles/material.scss"
+              "src/styles/app.scss"
             ],
             "scripts": []
           },
@@ -51,7 +50,9 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "projectName:build"
+            "browserTarget": "projectName:build",
+            "host": "0.0.0.0",
+            "port": 4200
           },
           "configurations": {
             "production": {
@@ -73,7 +74,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "config/karma.conf.js",
             "styles": [
-              "src/styles.css"
+              "src/styles/app.scss"
             ],
             "scripts": [],
             "assets": [
