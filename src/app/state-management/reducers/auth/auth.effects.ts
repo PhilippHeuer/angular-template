@@ -26,7 +26,7 @@ export class AuthEffects {
   @Effect({ dispatch: false })
   login(): Observable<Action> {
     return this.actions$
-      .ofType(ActionTypes.LOGIN)
+      .ofType(ActionTypes.AUTH_SUCCESS)
       .pipe(
         tap(action =>
           this.localStorageService.setItem('AUTH', { isAuthenticated: true })

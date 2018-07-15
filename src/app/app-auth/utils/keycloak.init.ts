@@ -22,6 +22,8 @@ export function initializer(keycloak: KeycloakService): () => Promise<any> {
             responseMode: 'fragment',
             checkLoginIframe: true
           },
+          // enables the interceptor that adds the Authorization: Bearer Token to every outgoing request
+          enableBearerInterceptor: true,
           bearerExcludedUrls: [
             '/assets',
           ],

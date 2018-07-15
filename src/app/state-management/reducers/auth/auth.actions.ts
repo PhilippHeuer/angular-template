@@ -8,8 +8,10 @@ import { Action } from '@ngrx/store';
  * @type {Actions}
  */
 export enum ActionTypes {
-  LOGIN         = '[Auth] LOGIN',
-  LOGOUT        = '[Auth] LOGOUT'
+  LOGIN              = '[Auth] LOGIN',
+  LOGOUT             = '[Auth] LOGOUT',
+  AUTH_SUCCESS       = '[Auth] AUTH SUCCESS',
+  AUTH_TOKEN_REFRESH = '[Auth] AUTH TOKEN REFRESHED',
 }
 
 /**
@@ -35,6 +37,40 @@ export class LogoutAction implements Action {
 }
 
 /**
+ * Authentication Success
+ * @class AuthenticationSuccessAction
+ * @implements {Action}
+ */
+export class AuthenticationSuccessAction implements Action {
+  readonly type = ActionTypes.AUTH_SUCCESS;
+
+  constructor(public payload: {
+    accessToken: string,
+    userAccountName: string,
+    userFirstName: string,
+    userLastName: string,
+    userEmail: string,
+  }) {}
+}
+
+/**
+ * Authentication Token Refreshed
+ * @class AuthenticationSuccessAction
+ * @implements {Action}
+ */
+export class AuthenticationTokenRefreshAction implements Action {
+  readonly type = ActionTypes.AUTH_TOKEN_REFRESH;
+
+  constructor(public payload: {
+    accessToken: string,
+    userAccountName: string,
+    userFirstName: string,
+    userLastName: string,
+    userEmail: string,
+  }) {}
+}
+
+/**
  * Action methods
  */
-export type ActionFunctions = LoginAction | LogoutAction;
+export type ActionFunctions = AuthenticationSuccessAction | AuthenticationTokenRefreshAction;

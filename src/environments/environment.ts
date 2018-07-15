@@ -21,9 +21,9 @@ export const environment = {
 
   // auth
   auth: {
-    server: 'http://keycloak-server/auth',
-    realm: 'realmName',
-    client: 'clientName'
+    server: 'http://localhost:8080/auth',
+    realm: 'master',
+    client: 'app-test'
   },
 };
 

@@ -9,15 +9,21 @@ import { ActionTypes } from './auth.actions';
  */
 export interface AuthState {
   isAuthenticated: boolean;
-  userName: string;
-  accessToken: string;
+  accessToken?: string;
+  userAccountName?: string;
+  userFirstName?: string;
+  userLastName?: string;
+  userEmail?: string;
 }
 
 // Default app state
 export const initialState: AuthState = {
   isAuthenticated: false,
-  userName: undefined,
   accessToken: undefined,
+  userAccountName: undefined,
+  userFirstName: undefined,
+  userLastName: undefined,
+  userEmail: undefined,
 };
 
 // Reducer function
@@ -25,16 +31,42 @@ export function authReducer(state: AuthState = initialState, action: Action) {
   switch (action.type) {
     case ActionTypes.LOGIN:
       return Object.assign({}, state, {
-        isAuthenticated: true,
-        userName: state.userName,
-        accessToken: state.accessToken,
+        isAuthenticated: false,
+        accessToken: initialState.accessToken,
+        userAccountName: initialState.userAccountName,
+        userFirstName: initialState.userFirstName,
+        userLastName: initialState.userLastName,
+        userEmail: initialState.userEmail,
       });
 
     case ActionTypes.LOGOUT:
       return Object.assign({}, state, {
         isAuthenticated: false,
-        userName: initialState.userName,
         accessToken: initialState.accessToken,
+        userAccountName: initialState.userAccountName,
+        userFirstName: initialState.userFirstName,
+        userLastName: initialState.userLastName,
+        userEmail: initialState.userEmail,
+      });
+
+    case ActionTypes.AUTH_SUCCESS:
+      return Object.assign({}, state, {
+        isAuthenticated: true,
+        accessToken: action.payload.accessToken,
+        userAccountName: action.payload.userAccountName,
+        userFirstName: action.payload.userFirstName,
+        userLastName: action.payload.userLastName,
+        userEmail: action.payload.userEmail,
+      });
+
+    case ActionTypes.AUTH_TOKEN_REFRESH:
+      return Object.assign({}, state, {
+        isAuthenticated: true,
+        accessToken: action.payload.accessToken,
+        userAccountName: action.payload.userAccountName,
+        userFirstName: action.payload.userFirstName,
+        userLastName: action.payload.userLastName,
+        userEmail: action.payload.userEmail,
       });
 
     default:
