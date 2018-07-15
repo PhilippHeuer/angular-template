@@ -1,34 +1,15 @@
 /**
  * Dependencies
  */
-import { NgModule } from '@angular/core';
+import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
-/**
- * Material - Navigation
- */
-import { MatMenuModule, MatSidenavModule, MatToolbarModule } from '@angular/material';
-
-/**
- * Material - Layout
- */
-import { MatStepperModule, MatTabsModule, MatListModule, MatCardModule, MatTreeModule } from '@angular/material';
-
-/**
- * Material - Inputs
- */
-import { MatInputModule, MatButtonModule, MatSelectModule, MatCheckboxModule } from '@angular/material';
-
-/**
- * Material - Buttons & Indicators
- */
-import { MatIconModule, MatProgressSpinnerModule, MatProgressBarModule } from '@angular/material';
 
 /**
  * Services
  */
+import { AnimationsService } from '@app/app-core/services/animations';
 import { LoggingService } from '@app/app-core/services/logging';
 
 /**
@@ -39,50 +20,10 @@ import { LoggingService } from '@app/app-core/services/logging';
     CommonModule,
     HttpClientModule,
     FormsModule,
-    // Material
-    // - Navigation
-    MatMenuModule,
-    MatSidenavModule,
-    MatToolbarModule,
-    // - Layout
-    MatTabsModule,
-    MatStepperModule,
-    MatListModule,
-    MatCardModule,
-    MatTreeModule,
-    // - Input
-    MatInputModule,
-    MatSelectModule,
-    MatButtonModule,
-    MatCheckboxModule,
-    // - Buttons & Indicators
-    MatIconModule,
-    MatProgressSpinnerModule,
-    MatProgressBarModule,
   ],
   exports: [
     CommonModule,
     FormsModule,
-    // Material
-    // - Navigation
-    MatMenuModule,
-    MatSidenavModule,
-    MatToolbarModule,
-    // - Layout
-    MatTabsModule,
-    MatStepperModule,
-    MatListModule,
-    MatCardModule,
-    MatTreeModule,
-    // - Input
-    MatInputModule,
-    MatSelectModule,
-    MatButtonModule,
-    MatCheckboxModule,
-    // - Buttons & Indicators
-    MatIconModule,
-    MatProgressSpinnerModule,
-    MatProgressBarModule,
   ]
 })
 export class CoreModule {
@@ -91,8 +32,15 @@ export class CoreModule {
    * Constructor
    */
   constructor(
-    private _logger: LoggingService
+    private _logger: LoggingService,
+    @Optional()
+    @SkipSelf()
+    parentModule: CoreModule
   ) {
+    if (parentModule) {
+      throw new Error('CoreModule is already loaded. Import only in AppModule');
+    }
+
     this._logger.log({
       level: 'DEBUG',
       message: 'App Core Module Initalized.',
@@ -116,6 +64,7 @@ export class CoreModule {
         /**
          * Services
          */
+        AnimationsService,
         LoggingService,
       ],
     };

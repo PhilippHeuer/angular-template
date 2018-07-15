@@ -5,6 +5,26 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 /**
+ * Material - Navigation
+ */
+import { MatMenuModule, MatSidenavModule, MatToolbarModule } from '@angular/material';
+
+/**
+ * Material - Layout
+ */
+import { MatStepperModule, MatTabsModule, MatListModule, MatCardModule, MatTreeModule } from '@angular/material';
+
+/**
+ * Material - Inputs
+ */
+import { MatInputModule, MatButtonModule, MatSelectModule, MatCheckboxModule } from '@angular/material';
+
+/**
+ * Material - Buttons & Indicators
+ */
+import { MatIconModule, MatProgressSpinnerModule, MatProgressBarModule } from '@angular/material';
+
+/**
  * Services
  */
 import { LoggingService } from '@app/app-core/services/logging';
@@ -18,10 +38,50 @@ import { LoggingService } from '@app/app-core/services/logging';
   imports: [
     // Angular
     CommonModule,
+    // Material
+    // - Navigation
+    MatMenuModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    // - Layout
+    MatTabsModule,
+    MatStepperModule,
+    MatListModule,
+    MatCardModule,
+    MatTreeModule,
+    // - Input
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    // - Buttons & Indicators
+    MatIconModule,
+    MatProgressSpinnerModule,
+    MatProgressBarModule,
   ],
   exports: [
     // Angular
     CommonModule,
+    // Material
+    // - Navigation
+    MatMenuModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    // - Layout
+    MatTabsModule,
+    MatStepperModule,
+    MatListModule,
+    MatCardModule,
+    MatTreeModule,
+    // - Input
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    // - Buttons & Indicators
+    MatIconModule,
+    MatProgressSpinnerModule,
+    MatProgressBarModule,
   ]
 })
 export class SharedModule {

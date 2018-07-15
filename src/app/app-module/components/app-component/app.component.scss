@@ -4,73 +4,130 @@
  * Credits:
  * - https://github.com/tomastrajan/angular-ngrx-material-starter
  */
-
-:host {
+body, html {
   height: 100%;
 }
-
-.branding img {
-  max-height: 45px;
+.app-loading {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.app-loading .spinner {
+  height: 200px;
+  width: 200px;
+  animation: rotate 2s linear infinite;
+  transform-origin: center center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.app-loading .spinner .path {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  animation: dash 1.5s ease-in-out infinite;
+  stroke-linecap: round;
+  stroke: #ddd;
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
 }
 
 mat-sidenav-container {
   height: 100%;
+  width: 100%;
 
-  .wrapper {
-    z-index: -2;
-    height: 100%;
+  .toolbar {
+    position: fixed;
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    position: relative;
-    overflow-y: auto;
 
-    .toolbar {
-      position: fixed;
-      width: 100%;
-      z-index: 1;
-      flex: 0 0 auto;
+    .nav-button {
+      margin: 0 10px 0 0;
+    }
 
-      .nav-button {
-        margin: 0 10px 0 0;
+    mat-icon {
+      font-size: 24px;
+    }
+
+    .branding {
+      cursor: pointer;
+      padding-top: 4px;
+
+      &.center {
+        text-align: center;
       }
 
-      .branding {
-        cursor: pointer;
-      }
-
-      .sign-in-button {
-        line-height: 35px;
-        margin-right: 10px;
-      }
-
-      .spacer {
-        flex: 1 1 auto;
-      }
-
-      @media (max-width: map-get($grid-breakpoints, lg)) {
-        .nav-button {
-          min-width: 0;
-          padding: 0 10px;
-        }
-        .sign-in-button {
-          min-width: 0;
-          padding: 0 10px;
-          margin: 0 5px 0 0;
-        }
+      img {
+        position: relative;
+        top: -2px;
+        height: 48px;
       }
     }
 
+    .sign-in-button {
+      line-height: 35px;
+      margin-right: 10px;
+    }
+
+    .spacer {
+      flex: 1 1 auto;
+    }
+
+    @media (max-width: map-get($grid-breakpoints, lg)) {
+      .nav-button {
+        min-width: 0;
+        padding: 0 10px;
+      }
+      .sign-in-button {
+        min-width: 0;
+        padding: 0 10px;
+        margin: 0 5px 0 0;
+      }
+    }
+  }
+
+  .wrapper {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+
     .content {
-      padding-top: 64px;
-      flex: 1 0 auto;
       position: relative;
+      flex: 1 0 auto;
     }
 
     .footer {
       flex: 0 0 auto;
       padding: 0 15px;
       text-align: center;
-      z-index: 1;
 
       .row {
         padding: 10px 0;
@@ -85,14 +142,25 @@ mat-sidenav-container {
               text-decoration: none;
             }
 
+            mat-icon {
+              font-size: 30px;
+              width: 35px;
+            }
+
             span {
               display: inline-block;
-              width: 70px;
-              padding: 0 0 0 5px;
+              width: 75px;
+              padding: 0 0 0 3px;
               overflow: hidden;
               text-align: left;
               white-space: nowrap;
               transition: width 0.5s;
+            }
+          }
+
+          @media (min-width: map-get($grid-breakpoints, lg)) {
+            a {
+              padding: 20px 10px;
             }
           }
 
@@ -109,7 +177,7 @@ mat-sidenav-container {
 
           @media (max-width: map-get($grid-breakpoints, sm)) {
             a {
-              padding: 20px 3px;
+              padding: 20px 5px;
             }
           }
         }
@@ -127,6 +195,12 @@ mat-sidenav-container {
       }
     }
   }
+
+  @media (max-width: map-get($grid-breakpoints, sm)) {
+    .wrapper {
+      top: 56px;
+    }
+  }
 }
 
 mat-sidenav {
@@ -139,7 +213,8 @@ mat-sidenav {
     font-weight: 500;
 
     img {
-      margin: 0 10px 0 0;
+      height: 48px;
+      margin: 2px 10px 0 0;
     }
 
     span {

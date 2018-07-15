@@ -28,6 +28,11 @@ export const ModuleRoutes: Route[] = [
    */
   {
     path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
+  {
+    path: 'home',
     component: HomeComponent,
   },
   /**

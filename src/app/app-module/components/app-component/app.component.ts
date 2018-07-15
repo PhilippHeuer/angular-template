@@ -7,13 +7,13 @@ import { environment } from '@environments/environment';
 import { Store } from '@ngrx/store';
 import { Subject } from 'rxjs';
 import { takeUntil, filter } from 'rxjs/operators';
-import { routerTransition } from '@app/app-core/animations/router.transition';
 import { selectorSetting, SettingState } from '@app/state-management/reducers/setting';
 
 /**
  * Services
  */
 import { LoggingService } from '@app/app-core/services/logging';
+import { AnimationsService, routeAnimations } from '@app/app-core/services/animations';
 
 /**
  * App Component
@@ -24,7 +24,7 @@ import { LoggingService } from '@app/app-core/services/logging';
   encapsulation: ViewEncapsulation.None,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [routerTransition]
+  animations: [routeAnimations]
 })
 export class AppComponent implements OnInit {
 
@@ -45,8 +45,14 @@ export class AppComponent implements OnInit {
 
   // Top-Level Navigation Items
   public navigation = [
-    { link: '', label: 'Home' },
-    { link: '404', label: 'Error' }
+    {
+      link: 'home',
+      label: 'Home'
+    },
+    {
+      link: '404',
+      label: 'Error'
+    }
   ];
 
   /**
@@ -59,7 +65,10 @@ export class AppComponent implements OnInit {
     public overlayContainer: OverlayContainer,
     private store: Store<any>,
     private logger: LoggingService,
-  ) {}
+    private animationService: AnimationsService
+  ) {
+    this.animationService.updateRouteAnimationType(true, true);
+  }
 
   /**
    * On Component Initalization

@@ -1,3 +1,9 @@
+/**
+ * Dependencies
+ *
+ * Credits:
+ * - https://github.com/tomastrajan/angular-ngrx-material-starter
+ */
 import { Injectable } from '@angular/core';
 
 @Injectable()
