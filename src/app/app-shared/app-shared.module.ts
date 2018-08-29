@@ -25,6 +25,17 @@ import { MatInputModule, MatButtonModule, MatSelectModule, MatCheckboxModule } f
 import { MatIconModule, MatProgressSpinnerModule, MatProgressBarModule, MatChipsModule } from '@angular/material';
 
 /**
+ * Font Awesome
+ */
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+
+library.add(fas, far, fab);
+
+/**
  * Services
  */
 import { LoggingService } from '@app/app-core/services/logging';
@@ -38,6 +49,8 @@ import { LoggingService } from '@app/app-core/services/logging';
   imports: [
     // Angular
     CommonModule,
+    // Font-AWesome
+    FontAwesomeModule,
     // Material
     // - Navigation
     MatMenuModule,
@@ -63,6 +76,8 @@ import { LoggingService } from '@app/app-core/services/logging';
   exports: [
     // Angular
     CommonModule,
+    // Font-AWesome
+    FontAwesomeModule,
     // Material
     // - Navigation
     MatMenuModule,
