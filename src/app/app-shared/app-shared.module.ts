@@ -22,7 +22,7 @@ import { MatInputModule, MatButtonModule, MatSelectModule, MatCheckboxModule } f
 /**
  * Material - Buttons & Indicators
  */
-import { MatIconModule, MatProgressSpinnerModule, MatProgressBarModule } from '@angular/material';
+import { MatIconModule, MatProgressSpinnerModule, MatProgressBarModule, MatChipsModule } from '@angular/material';
 
 /**
  * Services
@@ -58,6 +58,7 @@ import { LoggingService } from '@app/app-core/services/logging';
     MatIconModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
+    MatChipsModule,
   ],
   exports: [
     // Angular
@@ -82,6 +83,7 @@ import { LoggingService } from '@app/app-core/services/logging';
     MatIconModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
+    MatChipsModule,
   ]
 })
 export class SharedModule {
